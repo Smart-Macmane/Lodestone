@@ -19,6 +19,12 @@ header {
     z-index: 1000;
 }
 
+header .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
 header nav a {
     color: #fff;
     margin-right: 5px;
@@ -206,7 +212,7 @@ a.active {
     outline: none;
 }
 
-arrows button:hover {
+.arrows button:hover {
     transform: scale(1.1);
 }
 
@@ -357,6 +363,10 @@ arrows button:hover {
 @media (max-width: 768px) {
     header {
         padding-left: 20px;
+    }
+    header .logo {
+        top: 5px;
+        left: 5px;
     }
     header nav a {
         font-size: 14px;
