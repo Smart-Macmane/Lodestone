@@ -30,7 +30,7 @@ window.onclick = function(event) {
 var nextBtn = document.querySelector('.next'),
     prevBtn = document.querySelector('.prev'),
     carousel = document.querySelector('.carousel'),
-    list = document.querySelector('.list'), 
+    list = document.querySelector('.list'),
     item = document.querySelectorAll('.item'),
     runningTime = document.querySelector('.carousel .timeRunning');
 
@@ -85,3 +85,55 @@ function showSlider(type) {
 
 // Start the initial animation 
 resetTimeAnimation();
+
+// Coming Soon button navigation
+document.addEventListener('DOMContentLoaded', () => {
+    const comingSoonButtons = document.querySelectorAll('.comingSoonBtn');
+
+    comingSoonButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            window.location.href = 'coming-soon.html';
+        });
+    });
+});
+
+// Handle email subscription form submission
+document.addEventListener('DOMContentLoaded', () => {
+    const emailForm = document.getElementById('emailForm');
+
+    emailForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('email').value;
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                access_key: '00082c6d-2c8f-4230-b9db-0aebfbb3f319', 
+                email: email,
+                subject: 'New Subscriber',
+                from_name: 'Loadstone',
+                from_email: 'ernest@edhost.co.za',  
+                redirect: ''  
+            })
+        })
+        .then(response => response.json())
+        .then(result => {
+            if(result.success) {
+                alert('Thank you for subscribing!');
+                emailForm.reset();  
+                modal.style.display = "none";  
+            } else {
+                alert('There was an error. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error. Please try again.');
+        });
+    });
+});

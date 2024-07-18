@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <img src="lodestone.png" alt="" class="image" />
+        <header> Our website is under construction. We're working hard to improve our
+            website and we'll be ready to launch soon.</header>
+        <div class="email-content">
+            <p>Subscribe now to get the latest updates!</p>
+            <form id="emailForm">
+                <div class="input-box">
+                    <input type="email" id="email" placeholder="Enter your email" required />
+                    <button type="submit">Notify Me</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div class="copyright">
+        <p>
+            Copyrights © <span id="currentYear"></span>
+            <a>Lodestone Event's</a>, All Rights Reserved.
+        </p>
+    </div>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
