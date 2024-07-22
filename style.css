@@ -133,7 +133,7 @@ a.active {
     text-transform: uppercase;
     font-weight: bold;
     line-height: 1;
-    text-shadow: 3px 4px 4px rgba(251, 251, 251, 0.943);
+    text-shadow: 3px 4px 4px #cc9933;
     opacity: 0;
     animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
@@ -286,7 +286,7 @@ a.active {
 
 .social-icons a {
     color: #cc9933; 
-    font-size: 20px; /* Adjust icon size */
+    font-size: 20px; 
 }
 
 .close {
@@ -426,7 +426,6 @@ a.active {
     transition: all 0.3s ease;
   }
   .input-box button:hover {
-    /* background-color: #1a202a; */
     color: #cc9933;
   }
 @keyframes spin {
@@ -462,8 +461,8 @@ a.active {
         padding-left: 20px;
     }
     header .logo {
-        top: 5px;
-        left: 5px;
+        top: -6px;
+        left: 7px;
     }
     header nav a {
         font-size: 14px;
@@ -473,7 +472,7 @@ a.active {
         font-size: 40px;
     }
     .content .des {
-        font-size: 12px;
+        font-size: 15px;
     }
     .content .btn button {
         padding: 8px 16px;
@@ -494,7 +493,7 @@ a.active {
         font-size: 25px;
     }
     .content .des {
-        font-size: 10px;
+        font-size: 15px;
     }
     .content .btn button {
         padding: 6px 12px;
@@ -506,16 +505,72 @@ a.active {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
+    .list .item .content {
+        width: 85%;
+        padding: 15px;
+        text-align: center;
+        margin-left: -90px;
+    }
     .content .title, .content .name {
-        font-size: 20px;
+        font-size: 25px;
     }
     .content .des {
-        font-size: 8px;
+        font-size: 15px;
+        margin-bottom: 5px;
     }
     .content .btn button {
         padding: 4px 3px;
         font-size: 10px;
+    }
+    .modal-content {
+        margin: 40% auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .list .item .content {
+        width: 90%;
+        padding: 15px;
+        text-align: center;
+        /* margin-left: -90px; */
+    }
+    .content .title, .content .name {
+        font-size: 20px;
+    }
+    .content .des {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    .content .btn button {
+        padding: 4px 3px;
+        font-size: 10px;
+    }
+    .modal-content {
+        margin: 40% auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 395px) {
+    .list .item .content {
+        width: 90%;
+        padding: 15px;
+        text-align: center;
+        /* margin-left: -95px; */
+    }
+    .content .title, .content .name {
+        font-size: 20px;
+    }
+    .content .des {
+        font-size: 14px;
+        margin-bottom: 9px;
+    }
+    .content .btn button {
+        padding: 4px 3px;
+        font-size: 10px;
+        margin-bottom: 90px;
     }
     .modal-content {
         margin: 40% auto;
