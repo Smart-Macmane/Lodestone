@@ -465,7 +465,7 @@ a.active {
     .container header {
         font-size: 12px;
         margin-left: -25px;  
-    }     
+    }    
 }
 
 @media (max-width: 992px) {
@@ -517,8 +517,8 @@ a.active {
         font-size: 15px;
     }
     .content .btn button {
-        padding: 6px 12px;
-        font-size: 12px;
+        padding: 10px 15px;
+        font-size: 15px;
     }
     .modal-content {
         margin: 30% auto;
@@ -541,8 +541,8 @@ a.active {
         margin-bottom: 5px;
     }
     .content .btn button {
-        padding: 4px 3px;
-        font-size: 10px;
+        padding: 10px 20px;
+        font-size: 10px;       
     }
     .modal-content {
         margin: 40% auto;
@@ -565,7 +565,7 @@ a.active {
         margin-bottom: 5px;
     }
     .content .btn button {
-        padding: 4px 3px;
+        padding: 10px 15px;
         font-size: 10px;
     }
     .modal-content {
@@ -589,7 +589,7 @@ a.active {
         margin-bottom: 9px;
     }
     .content .btn button {
-        padding: 4px 3px;
+        padding: 10px 15px;
         font-size: 10px;
         margin-bottom: 90px;
     }
