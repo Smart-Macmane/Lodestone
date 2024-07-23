@@ -166,6 +166,7 @@ a.active {
     border: 3px solid #cc9933;
     background: #1a202a;
     color: #cc9933;
+    border-radius: 40px;
 
 }
 
