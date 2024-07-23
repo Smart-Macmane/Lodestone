@@ -162,11 +162,11 @@ a.active {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     border: 3px solid #cc9933;
     background: #1a202a;
     color: #cc9933;
-    border-radius: 40px;
+    border-radius: 30px;
 
 }
 
@@ -213,9 +213,9 @@ a.active {
     background: #1a202a;
     border: none;
     margin-left: 10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 60px;
+    height: 28px;
+    border-radius: 10%;
     color: #cc9933;
     cursor: pointer;
 }
@@ -340,12 +340,13 @@ a.active {
 
 .copyright {
     text-align: center;
-    padding: 0em;
+    padding: 8px;
     background-color: #1a202a;
     position: absolute;
-    bottom: 0;
+    bottom: 1;
     color: #cc9933;
     width: 100%;
+    font-size: 10px;
     flex-shrink: 0;
 }
 
@@ -429,6 +430,17 @@ a.active {
   .input-box button:hover {
     color: #cc9933;
   }
+  .copyrights {
+    text-align: center;
+    padding: 1px;
+    background-color: #1a202a;
+    position: absolute;
+    bottom: 0;
+    color: #cc9933;
+    width: 100%;
+    font-size: 10px;
+    /* flex-shrink: 0; */
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -443,9 +455,17 @@ a.active {
         font-size: 16px;
     }
     .copyright {
-        padding: 10px 5px;
+        padding: 4px 4px;
         font-size: 12px;
     }
+    .copyrights {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+    .container header {
+        font-size: 12px;
+        margin-left: -25px;  
+    }     
 }
 
 @media (max-width: 992px) {
