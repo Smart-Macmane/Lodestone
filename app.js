@@ -1,27 +1,51 @@
-// Get the modal
+// Get the modals
 var modal = document.getElementById("contactModal");
+var videoModal = document.getElementById("videoModal");
 
-// Get the buttons that open the modal
+// Get the buttons that open the modals
 var contactBtns = document.querySelectorAll(".contact-us-btn");
+var videoBtn = document.getElementById("videoBtn");
 
-// Get the <span> element that closes the modal
+// Get the <span> elements that close the modals
 var span = document.getElementsByClassName("close")[0];
+var videoCloseSpan = videoModal.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
+// When the user clicks on the contact button, open the contact modal
 contactBtns.forEach(function(btn) {
     btn.onclick = function() {
         modal.style.display = "block";
     }
 });
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x), close the contact modal
 span.onclick = function() {
     modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks on the video button, open the video modal
+videoBtn.onclick = function() {
+    videoModal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Stop background scrolling
+}
+
+// When the user clicks on <span> (x), close the video modal
+videoCloseSpan.onclick = function() {
+    videoModal.style.display = "none";
+    document.body.style.overflow = "auto"; // Re-enable background scrolling
+    var video = videoModal.querySelector('video');
+    video.pause();
+    video.currentTime = 0; // Reset the video
+}
+
+// When the user clicks anywhere outside of the modals, close them
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == videoModal) {
+        videoModal.style.display = "none";
+        document.body.style.overflow = "auto"; // Re-enable background scrolling
+        var video = videoModal.querySelector('video');
+        video.pause();
+        video.currentTime = 0; // Reset the video
+    } else if (event.target == modal) {
         modal.style.display = "none";
     }
 }
@@ -59,6 +83,11 @@ function resetTimeAnimation() {
 }
 
 function showSlider(type) {
+    // Prevent sliding if video modal is open
+    if (videoModal.style.display === "block") {
+        return;
+    }
+
     let sliderItemsDom = list.querySelectorAll('.carousel .list .item');
     if(type === 'next'){
         list.appendChild(sliderItemsDom[0]);
