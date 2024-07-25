@@ -7,37 +7,37 @@ var contactBtns = document.querySelectorAll(".contact-us-btn");
 var videoBtn = document.getElementById("videoBtn");
 
 // Get the <span> elements that close the modals
-var span = document.getElementsByClassName("close")[0];
-var videoCloseSpan = videoModal.getElementsByClassName("close")[0];
+var closeBtns = document.querySelectorAll(".close");
 
-// When the user clicks on the contact button, open the contact modal
+// Open the contact modal
 contactBtns.forEach(function(btn) {
     btn.onclick = function() {
         modal.style.display = "block";
-    }
+    };
 });
 
-// When the user clicks on <span> (x), close the contact modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
+// Close the modals
+closeBtns.forEach(function(btn) {
+    btn.onclick = function() {
+        if (btn.closest("#contactModal")) {
+            modal.style.display = "none";
+        } else if (btn.closest("#videoModal")) {
+            videoModal.style.display = "none";
+            document.body.style.overflow = "auto"; // Re-enable background scrolling
+            var video = videoModal.querySelector('video');
+            video.pause();
+            video.currentTime = 0; // Reset the video
+        }
+    };
+});
 
-// When the user clicks on the video button, open the video modal
+// Open the video modal
 videoBtn.onclick = function() {
     videoModal.style.display = "block";
     document.body.style.overflow = "hidden"; // Stop background scrolling
-}
+};
 
-// When the user clicks on <span> (x), close the video modal
-videoCloseSpan.onclick = function() {
-    videoModal.style.display = "none";
-    document.body.style.overflow = "auto"; // Re-enable background scrolling
-    var video = videoModal.querySelector('video');
-    video.pause();
-    video.currentTime = 0; // Reset the video
-}
-
-// When the user clicks anywhere outside of the modals, close them
+// Close modals when clicking outside of them
 window.onclick = function(event) {
     if (event.target == videoModal) {
         videoModal.style.display = "none";
@@ -48,37 +48,34 @@ window.onclick = function(event) {
     } else if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+};
 
 // Carousel functionality
-var nextBtn = document.querySelector('.next'),
-    prevBtn = document.querySelector('.prev'),
-    carousel = document.querySelector('.carousel'),
-    list = document.querySelector('.list'),
-    item = document.querySelectorAll('.item'),
-    runningTime = document.querySelector('.carousel .timeRunning');
+var nextBtn = document.querySelector('.next');
+var prevBtn = document.querySelector('.prev');
+var carousel = document.querySelector('.carousel');
+var list = document.querySelector('.list');
+var runningTime = document.querySelector('.carousel .timeRunning');
 
 let timeRunning = 3000;
 let timeAutoNext = 7000;
 
-nextBtn.onclick = function(){
+nextBtn.onclick = function() {
     showSlider('next');
-}
+};
 
-prevBtn.onclick = function(){
+prevBtn.onclick = function() {
     showSlider('prev');
-}
+};
 
 let runTimeOut;
-
 let runNextAuto = setTimeout(() => {
     nextBtn.click();
 }, timeAutoNext);
 
 function resetTimeAnimation() {
     runningTime.style.animation = 'none';
-    runningTime.offsetHeight; /* trigger reflow */
-    runningTime.style.animation = null;
+    runningTime.offsetHeight; // trigger reflow
     runningTime.style.animation = 'runningTime 7s linear 1 forwards';
 }
 
@@ -89,10 +86,10 @@ function showSlider(type) {
     }
 
     let sliderItemsDom = list.querySelectorAll('.carousel .list .item');
-    if(type === 'next'){
+    if (type === 'next') {
         list.appendChild(sliderItemsDom[0]);
         carousel.classList.add('next');
-    } else{
+    } else {
         list.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
         carousel.classList.add('prev');
     }

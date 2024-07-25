@@ -373,25 +373,21 @@ a.active {
     color: #cc9933;
     max-width: 550px;
     text-align: center;
-    
-  }
-  .container p {
-    font-size: 16px;
-    font-weight: 400;
-    color: #cc9933;
-    max-width: 550px;
-    text-align: center;
-    margin-top: 250px;
-  }
+    margin-top: -310px;
+  } 
   .email-content {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 50px;
     width: 100%;
   }
   .email-content p {
     font-size: 13px;
+    font-weight: 400;
+    color: #cc9933;
+    max-width: 550px;
+    text-align: center;
   }
   .input-box {
     display: flex;
@@ -446,7 +442,7 @@ a.active {
     position: fixed;
     z-index: 1001;
     left: 0;
-    top: 90;
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -484,17 +480,30 @@ a.active {
 
 
 #videoBtn {
-    padding: 10px 20px;
+    padding: 5px 20px;
     border: none;
     background: #1a202a;
     color: #cc9933;
     height: 28px;
     border-radius: 10%;
     position: absolute; 
-    top: 515px; 
-    right: 300px; 
+    top: 514px; 
+    right: 199px; 
+}
+.video-content .close {
+    color: white; 
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: -9px;
+    right: 5px;
+    cursor: pointer;
 }
 
+.video-content .close:hover,
+.video-content .close:focus {
+    color: #ff0000; 
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -519,7 +528,8 @@ a.active {
     .container header {
         font-size: 12px;
         margin-left: -25px;  
-    }    
+    }   
+    
 }
 
 @media (max-width: 992px) {
@@ -529,6 +539,10 @@ a.active {
     .content .des {
         font-size: 14px;
     }
+    #videoBtn { 
+        top: 569px; 
+        right: 199px; 
+    } 
 }
 
 @media (max-width: 768px) {
@@ -557,6 +571,10 @@ a.active {
         margin: 20% auto;
         width: 90%;
     }
+    #videoBtn { 
+        top: 850px; 
+        right: 199px; 
+    } 
 }
 
 @media (max-width: 576px) {
@@ -578,6 +596,10 @@ a.active {
         margin: 30% auto;
         width: 95%;
     }
+    #videoBtn { 
+        top: 800px; 
+        right: 199px; 
+    } 
 }
 
 @media (max-width: 450px) {
@@ -602,6 +624,10 @@ a.active {
         margin: 40% auto;
         width: 100%;
     }
+    #videoBtn { 
+        top: 800px; 
+        right: 199px; 
+    } 
 }
 
 @media (max-width: 400px) {
@@ -626,6 +652,11 @@ a.active {
         margin: 40% auto;
         width: 100%;
     }
+    #videoBtn { 
+        top: 0px; 
+        right: 199px; 
+    }
+  
 }
 
 @media (max-width: 395px) {
@@ -633,7 +664,6 @@ a.active {
         width: 90%;
         padding: 15px;
         text-align: center;
-        /* margin-left: -95px; */
     }
     .content .title, .content .name {
         font-size: 20px;
@@ -651,4 +681,8 @@ a.active {
         margin: 40% auto;
         width: 100%;
     }
+    #videoBtn { 
+        top: 642px; 
+        right: 199px; 
+    } 
 }
