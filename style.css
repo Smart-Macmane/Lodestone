@@ -379,7 +379,7 @@ a.active {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     width: 100%;
   }
   .email-content p {
@@ -495,7 +495,7 @@ a.active {
     border-radius: 10%;
     color: #cc9933;
     cursor: pointer;
-    right: 199px;
+    right: 170px;
 }
 .video-content .close {
     color: white; 
